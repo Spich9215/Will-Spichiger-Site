@@ -8,34 +8,45 @@
     <link rel="icon" type="image/png" href="SwissFlagFavicon.png">
 </head>
 
+<!-- Load your local config (this must come first) -->
+<script src="config.js"></script>
+
 <div id="bike-map" style="width: 100%; height: 600px;"></div>
 <div id="legend"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE_qT-Mik47HnzWQFyGmsA63V3Q8ILhGQ"></script>
+<div class="map-container">
+    <div id="bike-map"></div>
+    <div id="legend"></div>
+</div>
+
 <script>
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${config.GOOGLE_MAPS_API_KEY}&callback=initBikeMap`;
+    script.async = true;
+    document.head.appendChild(script);
+
     let map;
-    const bounds = new google.maps.LatLngBounds();
+    let bounds;
 
-
-    
     function initBikeMap() {
-            map = new google.maps.Map(document.getElementById("bike-map"), {
-                center: { lat: 41.15, lng: -73.88 },
-                zoom: 12,
+        map = new google.maps.Map(document.getElementById("bike-map"), {
+            center: { lat: 41.15, lng: -73.88 },
+            zoom: 12,
+        });
+
+        bounds = new google.maps.LatLngBounds();
+
+        const colors = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#00FFFF'];
+        let colorIndex = 0;
+
+        fetch('gpxFiles.json')
+            .then(response => response.json())
+            .then(gpxFiles => {
+                gpxFiles.forEach(item => {
+                    loadGPX(item.file, item.color, item.label);
+                });
             });
-
-            const colors = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#00FFFF'];
-            let colorIndex = 0;
-
-            fetch('gpxFiles.json')
-                    .then(response => response.json())
-                    .then(gpxFiles => {
-                        gpxFiles.forEach(item => {
-                            loadGPX(item.file, item.color, item.label);
-                        });
-                    });           
-            }
-    
+    }
 
     function loadGPX(file, color, label) {
         fetch(file)
@@ -68,24 +79,56 @@
 
                 // Add to the legend
                 const legend = document.getElementById('legend');
+                
+                // Clean up the label text
+                const cleanedLabel = label.replace(/From\s+/i, '').replace(/\s+to\s+/i, ' → ');
+
                 const item = document.createElement('div');
-                item.innerHTML = `<span style="display:inline-block;width:24px;height:12px;background:${color};margin-right:5px;"></span> ${label}`;
+                item.innerHTML = `<span style="display:inline-block;width:24px;height:12px;background:${color};margin-right:8px;"></span> ${cleanedLabel}`;
                 legend.appendChild(item);
             });
     }
-    window.addEventListener('load', initBikeMap);
 </script>
 
 <style>
+    #bike-map {
+        width: 100%;
+        height: 600px;
+        position: relative;
+    }
+
     #legend {
+        background: white;
         padding: 10px;
-        background: #fff;
         margin: 10px;
-        border: 1px solid #ccc;
-        max-width: 200px;
+        border: 1px solid #999;
+        font-size: 14px;
+        max-width: 220px;
+        overflow-y: auto;
+        max-height: 500px;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        line-height: 1.5em;
+    }
+
+    /* Position the legend over the map */
+    .map-container {
+        position: relative;
+    }
+
+    #legend {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    #legend div {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
     }
 </style>
-
+  
 
 <div id="bike-map" style="width: 100%; height: 600px;"></div>
 <div id="legend"></div>
