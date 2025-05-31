@@ -8,6 +8,164 @@
     <link rel="icon" type="image/png" href="SwissFlagFavicon.png">
 </head>
 
+<div id="bike-map" style="width: 100%; height: 600px;"></div>
+<div id="legend"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE_qT-Mik47HnzWQFyGmsA63V3Q8ILhGQ"></script>
+<script>
+    let map;
+    const bounds = new google.maps.LatLngBounds();
+
+
+    
+    function initBikeMap() {
+            map = new google.maps.Map(document.getElementById("bike-map"), {
+                center: { lat: 41.15, lng: -73.88 },
+                zoom: 12,
+            });
+
+            const colors = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#00FFFF'];
+            let colorIndex = 0;
+
+            fetch('gpxFiles.json')
+                    .then(response => response.json())
+                    .then(gpxFiles => {
+                        gpxFiles.forEach(item => {
+                            loadGPX(item.file, item.color, item.label);
+                        });
+                    });           
+            }
+    
+
+    function loadGPX(file, color, label) {
+        fetch(file)
+            .then(response => response.text())
+            .then(gpxText => {
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(gpxText, "application/xml");
+                const points = xml.getElementsByTagName("trkpt");
+
+                const routeCoords = [];
+                for (let i = 0; i < points.length; i++) {
+                    const lat = parseFloat(points[i].getAttribute("lat"));
+                    const lng = parseFloat(points[i].getAttribute("lon"));
+                    routeCoords.push({ lat, lng });
+                }
+
+                const routePath = new google.maps.Polyline({
+                    path: routeCoords,
+                    geodesic: true,
+                    strokeColor: color,
+                    strokeOpacity: 1.0,
+                    strokeWeight: 3,
+                });
+
+                routePath.setMap(map);
+
+                // Extend the map bounds to include this route
+                routeCoords.forEach(coord => bounds.extend(coord));
+                map.fitBounds(bounds);
+
+                // Add to the legend
+                const legend = document.getElementById('legend');
+                const item = document.createElement('div');
+                item.innerHTML = `<span style="display:inline-block;width:24px;height:12px;background:${color};margin-right:5px;"></span> ${label}`;
+                legend.appendChild(item);
+            });
+    }
+    window.addEventListener('load', initBikeMap);
+</script>
+
+<style>
+    #legend {
+        padding: 10px;
+        background: #fff;
+        margin: 10px;
+        border: 1px solid #ccc;
+        max-width: 200px;
+    }
+</style>
+
+
+<div id="bike-map" style="width: 100%; height: 600px;"></div>
+<div id="legend"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDE_qT-Mik47HnzWQFyGmsA63V3Q8ILhGQ"></script>
+<script>
+    let map;
+    const bounds = new google.maps.LatLngBounds();
+
+
+    
+    function initBikeMap() {
+            map = new google.maps.Map(document.getElementById("bike-map"), {
+                center: { lat: 41.15, lng: -73.88 },
+                zoom: 12,
+            });
+
+            const colors = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#00FFFF'];
+            let colorIndex = 0;
+
+            fetch('gpxFiles.json')
+                    .then(response => response.json())
+                    .then(gpxFiles => {
+                        gpxFiles.forEach(item => {
+                            loadGPX(item.file, item.color, item.label);
+                        });
+                    });           
+            }
+    
+
+    function loadGPX(file, color, label) {
+        fetch(file)
+            .then(response => response.text())
+            .then(gpxText => {
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(gpxText, "application/xml");
+                const points = xml.getElementsByTagName("trkpt");
+
+                const routeCoords = [];
+                for (let i = 0; i < points.length; i++) {
+                    const lat = parseFloat(points[i].getAttribute("lat"));
+                    const lng = parseFloat(points[i].getAttribute("lon"));
+                    routeCoords.push({ lat, lng });
+                }
+
+                const routePath = new google.maps.Polyline({
+                    path: routeCoords,
+                    geodesic: true,
+                    strokeColor: color,
+                    strokeOpacity: 1.0,
+                    strokeWeight: 3,
+                });
+
+                routePath.setMap(map);
+
+                // Extend the map bounds to include this route
+                routeCoords.forEach(coord => bounds.extend(coord));
+                map.fitBounds(bounds);
+
+                // Add to the legend
+                const legend = document.getElementById('legend');
+                const item = document.createElement('div');
+                item.innerHTML = `<span style="display:inline-block;width:24px;height:12px;background:${color};margin-right:5px;"></span> ${label}`;
+                legend.appendChild(item);
+            });
+    }
+    window.addEventListener('load', initBikeMap);
+</script>
+
+<style>
+    #legend {
+        padding: 10px;
+        background: #fff;
+        margin: 10px;
+        border: 1px solid #ccc;
+        max-width: 200px;
+    }
+</style>
+
+
 <!-- Load your local config (this must come first) -->
 <script src="config.js"></script>
 
