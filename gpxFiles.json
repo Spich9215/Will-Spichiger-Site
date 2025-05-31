@@ -1,0 +1,102 @@
+[
+    {
+        "file": "rides/2024-01-14_1415911228_From San Joaqu\u00edn Poniente to Calera de Tango.gpx",
+        "color": "#FF0000",
+        "label": "From San Joaqu\u00edn Poniente to Calera de Tango"
+    },
+    {
+        "file": "rides/2024-01-15_1415990836_From Maip\u00fa to Isla de Maipo.gpx",
+        "color": "#0000FF",
+        "label": "From Maip\u00fa to Isla de Maipo"
+    },
+    {
+        "file": "rides/2024-01-15_1416658643_From Isla de Maipo to San Fernando.gpx",
+        "color": "#00FF00",
+        "label": "From Isla de Maipo to San Fernando"
+    },
+    {
+        "file": "rides/2024-01-17_1417178636_From Los Lirios to Los Boldos.gpx",
+        "color": "#FFFF00",
+        "label": "From Los Lirios to Los Boldos"
+    },
+    {
+        "file": "rides/2024-01-20_1420212597_From Isla de Y\u00e1quil to Constituci\u00f3n.gpx",
+        "color": "#FF00FF",
+        "label": "From Isla de Y\u00e1quil to Constituci\u00f3n"
+    },
+    {
+        "file": "rides/2024-01-21_1420772495_From Lolol to Huala\u00f1\u00e9.gpx",
+        "color": "#00FFFF",
+        "label": "From Lolol to Huala\u00f1\u00e9"
+    },
+    {
+        "file": "rides/2024-01-23_1421143188_From Huala\u00f1\u00e9 to Constituci\u00f3n.gpx",
+        "color": "#FF0000",
+        "label": "From Huala\u00f1\u00e9 to Constituci\u00f3n"
+    },
+    {
+        "file": "rides/2024-01-23_1421359749_From Curepto to Constituci\u00f3n.gpx",
+        "color": "#0000FF",
+        "label": "From Curepto to Constituci\u00f3n"
+    },
+    {
+        "file": "rides/2024-01-24_1422047382_From Constituci\u00f3n to Los Molinos.gpx",
+        "color": "#00FF00",
+        "label": "From Constituci\u00f3n to Los Molinos"
+    },
+    {
+        "file": "rides/2024-01-25_1422776241_From Constituci\u00f3n to Pelluhue.gpx",
+        "color": "#FFFF00",
+        "label": "From Constituci\u00f3n to Pelluhue"
+    },
+    {
+        "file": "rides/2024-01-26_1423485489_From Pelluhue to Quirihue.gpx",
+        "color": "#FF00FF",
+        "label": "From Pelluhue to Quirihue"
+    },
+    {
+        "file": "rides/2024-01-27_1424566339_From Buchupureo to Quirihue.gpx",
+        "color": "#00FFFF",
+        "label": "From Buchupureo to Quirihue"
+    },
+    {
+        "file": "rides/2024-01-27_1424697657_From Quirihue to Coelemu.gpx",
+        "color": "#FF0000",
+        "label": "From Quirihue to Coelemu"
+    },
+    {
+        "file": "rides/2024-01-28_1426802605_From Coelemu to Puc\u00f3n.gpx",
+        "color": "#0000FF",
+        "label": "From Coelemu to Puc\u00f3n"
+    },
+    {
+        "file": "rides/2024-01-31_1428204940_From Palomares to Santa Juana.gpx",
+        "color": "#00FF00",
+        "label": "From Palomares to Santa Juana"
+    },
+    {
+        "file": "rides/2024-01-31_1428362026_From Santa Juana to Nacimiento.gpx",
+        "color": "#FFFF00",
+        "label": "From Santa Juana to Nacimiento"
+    },
+    {
+        "file": "rides/2024-02-02_1429755200_From Nacimiento to Traigu\u00e9n.gpx",
+        "color": "#FF00FF",
+        "label": "From Nacimiento to Traigu\u00e9n"
+    },
+    {
+        "file": "rides/2024-02-03_1430851076_From Huequ\u00e9n to Curacaut\u00edn.gpx",
+        "color": "#00FFFF",
+        "label": "From Huequ\u00e9n to Curacaut\u00edn"
+    },
+    {
+        "file": "rides/2024-02-06_1433502550_From Traigu\u00e9n to Curacaut\u00edn.gpx",
+        "color": "#FF0000",
+        "label": "From Traigu\u00e9n to Curacaut\u00edn"
+    },
+    {
+        "file": "rides/2024-02-07_1434195736_To Melipeuco.gpx",
+        "color": "#0000FF",
+        "label": "To Melipeuco"
+    }
+]
