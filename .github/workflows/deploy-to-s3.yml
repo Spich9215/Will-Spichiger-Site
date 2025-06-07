@@ -1,25 +1,48 @@
-name: Deploy static site to S3
+# .github/workflows/deploy.yml
 
+name: Deploy to AWS and Inject API Key
+
+# Run this workflow automatically on pushes to the main branch
 on:
   push:
     branches:
-      - main
+      - main # Or master, depending on your branch name
 
+# Define the jobs that will run
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest # Use a standard Linux environment
     steps:
-      - name: Checkout repo
+      # 1. Check out your repository's code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
+      # 2. Configure AWS credentials using the secrets you stored
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1  # Change this if your bucket is in a different AWS region
+          aws-region: us-east-1 # <-- IMPORTANT: Change to your AWS region
 
-      - name: Sync files to S3 bucket
+      # 3. Fetch the API key from AWS Systems Manager
+      - name: Get Google Maps API Key from SSM Parameter Store
         run: |
-          aws s3 sync . s3://williamtaylorspichiger.com --delete --exclude ".git/*" --exclude ".github/*"
+          # This command gets the parameter and saves its value to a variable
+          MAPS_API_KEY=$(aws ssm get-parameter --name "Maps_API_KEY" --with-decryption --query "Parameter.Value" --output text)
+          # Make the variable available to subsequent steps in the workflow
+          echo "Maps_API_KEY=${MAPS_API_KEY}" >> $GITHUB_ENV
+
+      # 4. Inject the API key into the JavaScript file
+      - name: Replace API Key Placeholder
+        run: |
+          # Find the placeholder in map-loader.js and replace it with the real key
+          # The 'g' flag ensures all instances are replaced, just in case
+          sed -i "s|__Maps_API_KEY__|${{ env.Maps_API_KEY }}|g" map-loader.js
+
+      # 5. Deploy your code to AWS
+      # This is an example for deploying a static site to an S3 bucket.
+      # Replace with your actual deployment command.
+      - name: Deploy to S3
+        run: |
+          aws s3 sync . s3://your-s3-bucket-name --delete # <-- IMPORTANT: Change to your S3 bucket name
