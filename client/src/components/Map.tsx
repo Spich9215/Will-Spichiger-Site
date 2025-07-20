@@ -1,36 +1,39 @@
 // client/src/components/Map.tsx
 import React, { useEffect, useRef } from 'react';
 
-// GLOBAL variable to strictly control script appending.
-// This ensures that even if Map component unmounts/remounts quickly (e.g., React Strict Mode),
-// the script is only ever added to the DOM once.
+// GLOBAL variable: Set to true IMMEDIATELY when script is appended to DOM.
+// This is the critical change to prevent multiple appends in React Strict Mode.
+// It acts as a gatekeeper for the *DOM append operation*.
 let isGoogleMapsScriptAppendedToDOM = false;
 
-const Map: React.FC = () => {
+const Map: React.FC = () => { // Keeping your original component name 'Map'
   const mapRef = useRef<HTMLDivElement>(null);
-  const googleMapInstanceRef = useRef<google.maps.Map | null>(null); // Stores the ONE map instance
+  // useRef to store the Google Maps Map instance. This ensures it's created once
+  // and persists across re-renders, allowing polylines/markers to attach to the same map.
+  const googleMapInstanceRef = useRef<google.maps.Map | null>(null);
 
   const initMapAndLoadRoutes = async () => {
-    console.log("initMapAndLoadRoutes: Function started.");
+    console.log("initMapAndLoadRoutes: Function started. window.google.maps status:", !!(window.google && window.google.maps));
 
+    // Ensure the map container div is available
     if (!mapRef.current) {
       console.error("initMapAndLoadRoutes: mapRef.current is null. Map container div not found or not rendered yet.");
       return;
     }
 
-    // Ensure Google Maps API is ready BEFORE trying to create map/objects
+    // Critical check: Ensure Google Maps API (window.google.maps) is fully loaded.
+    // This is a safety check for unexpected race conditions after the script's onload fires.
     if (!window.google || !window.google.maps) {
-        console.error("initMapAndLoadRoutes: window.google.maps is NOT available when initMapAndLoadRoutes was called.");
-        return; // CRITICAL: Exit if API not ready
+        console.error("initMapAndLoadRoutes: Called but window.google.maps is NOT available when initMapAndLoadRoutes was called. Script might not be fully ready.");
+        return; // Exit if API is not ready
     }
 
-    // Initialize the map ONLY if it hasn't been created before.
-    // This is crucial for map persistence and correct object attachment.
+    // Initialize the Google Map instance ONLY if it hasn't been created before
     if (!googleMapInstanceRef.current) {
       console.log("initMapAndLoadRoutes: Creating new Google Maps Map instance.");
       try {
         googleMapInstanceRef.current = new window.google.maps.Map(mapRef.current, {
-          center: { lat: -35.334, lng: -72.416 },
+          center: { lat: -35.334, lng: -72.416 }, // Example starting location
           zoom: 9,
           mapTypeId: window.google.maps.MapTypeId.TERRAIN // Your desired terrain default
         });
@@ -43,14 +46,15 @@ const Map: React.FC = () => {
       console.log("initMapAndLoadRoutes: Google Map instance already exists, reusing it.");
     }
 
-    const map = googleMapInstanceRef.current; // Get the active map instance
+    // Get the current map instance to work with
+    const map = googleMapInstanceRef.current;
     if (!map) {
-        console.error("initMapAndLoadRoutes: Map instance is null after initialization attempt. Cannot proceed with loading routes.");
-        return;
+        console.error("initMapAndLoadRoutes: Map instance is unexpectedly null after initialization attempt. Cannot proceed with loading routes.");
+        return; // Critical error, cannot draw routes without a map
     }
     console.log("initMapAndLoadRoutes: Map instance ready for drawing routes.");
 
-    // --- GPX Route Loading and Drawing Logic (No changes needed here as it's correctly logging parsing) ---
+    // --- GPX Route Loading and Drawing Logic (remains unchanged) ---
     try {
       console.log("initMapAndLoadRoutes: Attempting to fetch /gpxFiles.json...");
       const res = await fetch('/gpxFiles.json');
@@ -111,11 +115,9 @@ const Map: React.FC = () => {
         console.log(`initMapAndLoadRoutes: Processed ${coords.length} valid coordinates for "${gpxUrl}".`);
 
         if (coords.length > 0) {
-          // This is where the crucial map instance is passed.
-          // It MUST be a valid google.maps.Map object from the *successful* initialization.
           new window.google.maps.Polyline({
             path: coords,
-            map: map, // <-- THIS 'map' MUST BE VALID!
+            map: map,
             strokeColor: color || '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 3,
@@ -125,7 +127,7 @@ const Map: React.FC = () => {
           if (label) {
             new window.google.maps.Marker({
               position: coords[0],
-              map: map, // <-- THIS 'map' MUST BE VALID!
+              map: map,
               title: label,
               icon: {
                 path: window.google.maps.SymbolPath.CIRCLE,
@@ -149,13 +151,13 @@ const Map: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log("Map.tsx useEffect: Effect initiated.");
+    console.log("Map.tsx useEffect: Effect initiated. isGoogleMapsScriptAppendedToDOM:", isGoogleMapsScriptAppendedToDOM, "window.google:", !!window.google);
     const scriptId = 'google-maps-api-script';
 
-    // FIRST check our custom flag. If true, script has been appended.
-    // SECOND check if window.google is ready.
-    // THIRD check if the script element is already in the DOM (redundant check, but safe).
-    if (!isGoogleMapsScriptAppendedToDOM && (!window.google || !document.getElementById(scriptId))) {
+    // Condition to append the script:
+    // 1. Our global flag says it hasn't been appended yet.
+    // 2. AND (window.google.maps is NOT fully available OR the script element is NOT yet in the DOM)
+    if (!isGoogleMapsScriptAppendedToDOM && (!window.google?.maps || !document.getElementById(scriptId))) {
       console.log("Map.tsx useEffect: Google Maps script not detected or not yet appended. Proceeding to append.");
       const script = document.createElement('script');
       script.id = scriptId;
@@ -163,17 +165,16 @@ const Map: React.FC = () => {
       script.async = true;
       script.defer = true;
       script.onload = () => {
-        console.log("Map.tsx useEffect: Google Maps script loaded via its 'onload' event.");
-        // Only trigger initMapAndLoadRoutes IF window.google.maps is actually ready
-        if (window.google && window.google.maps) {
-            isGoogleMapsScriptAppendedToDOM = true; // Set flag ONLY on successful load via onload
-            initMapAndLoadRoutes();
-        } else {
-            console.error("Map.tsx useEffect: Google Maps script onload fired, but window.google.maps is still not available. This is unexpected.");
-        }
+        console.log("Map.tsx useEffect: Google Maps script loaded via its 'onload' event. Now calling initMapAndLoadRoutes.");
+        // We only call initMapAndLoadRoutes here; the `isGoogleMapsScriptAppendedToDOM` flag
+        // was set *immediately after appending* to prevent re-append.
+        initMapAndLoadRoutes();
       };
       script.onerror = (e) => console.error("Map.tsx useEffect: Google Maps script failed to load:", e);
       document.body.appendChild(script);
+      // >>> CRITICAL CHANGE IS HERE: Set the flag immediately after appending. <<<
+      isGoogleMapsScriptAppendedToDOM = true;
+      console.log("Map.tsx useEffect: isGoogleMapsScriptAppendedToDOM set to true immediately after append operation.");
     } else {
       // This branch is for subsequent renders/mounts, or if it was loaded externally.
       // We still want to try to init map and load routes, but without re-appending script.
@@ -183,8 +184,8 @@ const Map: React.FC = () => {
 
     return () => {
         console.log("Map.tsx useEffect: Cleanup function called.");
-        // The cleanup function should ideally *not* remove the script unless you have a very specific SPA need.
-        // Removing it here would cause re-downloads/errors if the component remounts immediately.
+        // This cleanup should NOT remove the script element or reset the flag,
+        // as it would cause re-appending on next mount in Strict Mode.
     };
   }, []); // Empty dependency array: ensures this effect runs only once on component mount
 
