@@ -37,11 +37,6 @@ function StaticNoteDisplay({ noteContent, title = "Relearning React" }: StaticNo
             {noteContent}
           </ReactMarkdown>
         </div>
-
-        {/* Optional: A small footer or instruction */}
-        <p className="text-sm text-gray-500 mt-8 text-left"> {/* Aligned footer text left */}
-          These notes are embedded dectly in the component's code.
-        </p>
       </div>
     </div>
   );

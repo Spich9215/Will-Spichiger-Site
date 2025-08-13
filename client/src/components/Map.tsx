@@ -33,8 +33,8 @@ const Map: React.FC = () => { // Keeping your original component name 'Map'
       console.log("initMapAndLoadRoutes: Creating new Google Maps Map instance.");
       try {
         googleMapInstanceRef.current = new window.google.maps.Map(mapRef.current, {
-          center: { lat: -35.334, lng: -72.416 }, // Example starting location
-          zoom: 9,
+          center: { lat: -37.5, lng: -70 }, // Example starting location
+          zoom: 7,
           mapTypeId: window.google.maps.MapTypeId.TERRAIN // Your desired terrain default
         });
         console.log("initMapAndLoadRoutes: Google Map instance initialized successfully.");
