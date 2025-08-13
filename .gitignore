@@ -1,2 +1,13 @@
 .env
 config.js
+
+# Dependency directories
+node_modules/
+
+# Build output directories
+dist/
+build/
+
+# Other common files to ignore
+.DS_Store
+.env
