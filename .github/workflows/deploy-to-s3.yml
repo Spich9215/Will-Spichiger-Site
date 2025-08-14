@@ -20,9 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./client # Add this line
 
       - name: Build Vite app
         run: npm run build
+        working-directory: ./client # Add this line
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
