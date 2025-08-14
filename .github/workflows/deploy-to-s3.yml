@@ -36,3 +36,4 @@ jobs:
       - name: Sync files to S3 bucket
         run: |
           aws s3 sync dist/ s3://williamtaylorspichiger.com --delete --exclude ".git/*" --exclude ".github/*"
+        working-directory: ./client
