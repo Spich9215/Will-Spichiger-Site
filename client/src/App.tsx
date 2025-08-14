@@ -12,7 +12,6 @@ import Travel from './components/Travel';
 // Import your layout components
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Navbar from './components/Navbar'; // Import the new Navbar component
 
 function App() {
   return (
@@ -20,10 +19,10 @@ function App() {
       {/* All content must be wrapped in a single element */}
       <div id="root-container"> {/* You might want to style this container in App.css */}
         <Header />
-        {/* Render the Navbar component */}
-        <Navbar />
 
         <main className="content-area">
+        {/* This margin-top pushes the main content down by 60px */}
+        <main style={{ marginTop: '125px' }}></main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<Books />} />

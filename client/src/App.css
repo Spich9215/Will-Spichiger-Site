@@ -1,12 +1,29 @@
 #root {
+  --header-height: 300px;  /* Adjust this value to your header's height */
   max-width: 1280px;
   margin: 0;
   padding: 1rem;
   text-align: left;
 }
 
+.header-container {
+  /* Positions the header at the top of the browser viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Ensures the header spans the entire width */
+  width: 100%;
+
+  /* Optional: Add background color and padding for styling */
+  padding: 0px 0px;
+
+  /* Ensures the header appears above all other content */
+  z-index: 1000;
+}
+
 .logo {
-  height: 6em;
+  height: 3em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -37,6 +54,12 @@
   padding: 2em;
 } */
 
+
+
+.site-title {
+  padding: 10px;
+}
+
 .read-the-docs {
   color: #9e9b9b;
 }
@@ -44,17 +67,16 @@
 
 /* Navigation Styles */
 .main-nav {
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  width: 100%;
+  background-color: #504e57;
+  padding: 0rem;
+  border-radius: 0.2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 1.5rem;
   /* Use flexbox for layout */
   display: flex;
-  justify-content: flex-start;
-  /* Aligned to the left */
-  flex-wrap: wrap;
-  /* Allow links to wrap on smaller screens */
+  justify-content: flex-start; /* Aligned to the left */
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
 }
 
 .nav-list {
@@ -64,19 +86,15 @@
   padding: 0;
   display: flex;
   /* Make list items display in a row */
-  gap: 1.5rem;
+  gap: 0rem;
   /* Space between links */
   flex-wrap: wrap;
   /* Allow items to wrap */
 }
 
-.nav-item {
-  /* No specific styling needed for li, as styling is on the <a> */
-}
-
 .nav-link {
   text-decoration: none;
-  color: #007bff;
+  color: #ffffff;
   /* Primary link color */
   font-weight: 600;
   padding: 0.5rem 1rem;
@@ -87,7 +105,7 @@
 }
 
 .nav-link:hover {
-  background-color: #007bff;
+  background-color: #42418b;
   color: white;
 }
 

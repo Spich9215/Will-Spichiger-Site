@@ -5,8 +5,8 @@ import Map from './Map'; // Import the Map component
 const Travel: React.FC = () => {
   return (
     <div className="page-content">
-      <h2>My Travel Adventures 🌍</h2>
-      <p>Here's a look at some of my cycling trips and other adventures plotted on a map!</p>
+      <h2>Santiago, Chile to San Carlos de Bariloche, Argentina GPX Data </h2>
+      <p>January - March 2024</p>
       <div className="map-container"> {/* Optional: A wrapper for your map */}
         <Map />
       </div>

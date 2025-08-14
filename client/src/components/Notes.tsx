@@ -4,28 +4,19 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 const siteNotesContent = `
-# How I Built This Site 🛠️
+## How I Built This Site 🛠️
 
 This section details the technologies and tools used in the creation and deployment of this website.
 
-## Technologies & Tools Used:
+### Technologies & Tools Used:
 * **Vite & React**: The core frontend framework for building the user interface.
 * **AWS Route 53**: Used to purchase and manage the domain.
 * **AWS S3**: Hosts the static website files.
 * **GitHub Actions Workflow**: Automates the deployment of changes to AWS S3 storage.
 * **AWS Systems Manager**: Securely stores sensitive credentials like the Google Maps API Key, preventing them from being exposed in public GitHub repositories.
 * **Google Maps API**: Renders GPX files from cycling trips.
-* **Komoot**: Used to plan and record cycling trips (note: some data might be missing due to Komoot not being used or phone battery dying mid-ride).
-* **Figma**: Utilized for designing the site's logo.
-* **GIMP**: Used for image editing.
-* **ChatGPT & GitHub Copilot**: AI assistants that provided help with coding and generating ideas.
-* **Google Search**: My go-to for finding solutions to various coding problems.
-* **Swiss Flag Favicon**: My favicon, a nod to my Swiss heritage (half Swiss, half Irish descent).
-
 ---
-
-## Features I Want to Add:
-
+### Features I Want to Add:
 * **Node.js Web Application Migration**: I may migrate this static site to a Node.js web application in a new branch.
 * **Education Credentials**: Render my educational credentials on a dedicated page.
 * **Goodreads API Integration**: Call the Goodreads API to build a page with a list of books I've read, potentially adding personal commentary.
