@@ -7,7 +7,7 @@ from itertools import cycle
 rides_dir = 'rides'
 
 # Example color palette (expand as needed)
-colors = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#00FFFF']
+colors = ['#FFFF00', '#C0C0C0']
 color_cycle = cycle(colors)
 
 # List to hold file info
