@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 const siteNotesContent = `
-## How I Built This Site 🛠️
+## How I Built This Site
 
 This section details the technologies and tools used in the creation and deployment of this website.
 

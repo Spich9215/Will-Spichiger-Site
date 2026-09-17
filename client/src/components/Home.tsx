@@ -6,11 +6,14 @@ const Home: React.FC = () => {
   return (
     <div className="page-content"> {/* Use a consistent class for page content */}
       <p>
-        Building this website for the sake of learning, creating, and sharing ideas.
-        I intend on documenting how I am building this site and the technologies that I leverage - React and Vite, learn new AWS tools, and document thoughts, notes, ideas.
+        This site is a work in progress.  
+        <br></br> 
+        I expect it to be a modicum of self expression akin to early internet sites as well as an exhibition of technical projects.
+        There are existing platforms and tools in existence that I could use, however, I am electing to build this custom site for learning.
+        <br></br>
+
         <br></br>
         <br></br>
-        I am hoping that I can showcase some technology projects and find a fulfilling employment opportunity.
       </p>
     </div>
   );
