@@ -1,102 +1,302 @@
 [
-    {
-        "file": "/rides/2024-01-14_1415911228_From San Joaqu\u00edn Poniente to Calera de Tango.gpx",
-        "color": "#411C6B",
-        "label": "From San Joaqu\u00edn Poniente to Calera de Tango"
-    },
-    {
-        "file": "/rides/2024-01-15_1415990836_From Maip\u00fa to Isla de Maipo.gpx",
-        "color": "#21D3C4",
-        "label": "From Maip\u00fa to Isla de Maipo"
-    },
-    {
-        "file": "/rides/2024-01-15_1416658643_From Isla de Maipo to San Fernando.gpx",
-        "color": "#BE2A6F",
-        "label": "From Isla de Maipo to San Fernando"
-    },
-    {
-        "file": "/rides/2024-01-17_1417178636_From Los Lirios to Los Boldos.gpx",
-        "color": "#FFD700",
-        "label": "From Los Lirios to Los Boldos"
-    },
-    {
-        "file": "/rides/2024-01-20_1420212597_From Isla de Y\u00e1quil to Constituci\u00f3n.gpx",
-        "color": "#1E90FF",
-        "label": "From Isla de Y\u00e1quil to Constituci\u00f3n"
-    },
-    {
-        "file": "/rides/2024-01-21_1420772495_From Lolol to Huala\u00f1\u00e9.gpx",
-        "color": "#DAA520",
-        "label": "From Lolol to Huala\u00f1\u00e9"
-    },
-    {
-        "file": "/rides/2024-01-23_1421143188_From Huala\u00f1\u00e9 to Constituci\u00f3n.gpx",
-        "color": "#411C6B",
-        "label": "From Huala\u00f1\u00e9 to Constituci\u00f3n"
-    },
-    {
-        "file": "/rides/2024-01-23_1421359749_From Curepto to Constituci\u00f3n.gpx",
-        "color": "#21D3C4",
-        "label": "From Curepto to Constituci\u00f3n"
-    },
-    {
-        "file": "/rides/2024-01-24_1422047382_From Constituci\u00f3n to Los Molinos.gpx",
-        "color": "#BE2A6F",
-        "label": "From Constituci\u00f3n to Los Molinos"
-    },
-    {
-        "file": "/rides/2024-01-25_1422776241_From Constituci\u00f3n to Pelluhue.gpx",
-        "color": "#FFD700",
-        "label": "From Constituci\u00f3n to Pelluhue"
-    },
-    {
-        "file": "/rides/2024-01-26_1423485489_From Pelluhue to Quirihue.gpx",
-        "color": "#1E90FF",
-        "label": "From Pelluhue to Quirihue"
-    },
-    {
-        "file": "/rides/2024-01-27_1424566339_From Buchupureo to Quirihue.gpx",
-        "color": "#DAA520",
-        "label": "From Buchupureo to Quirihue"
-    },
-    {
-        "file": "/rides/2024-01-27_1424697657_From Quirihue to Coelemu.gpx",
-        "color": "#411C6B",
-        "label": "From Quirihue to Coelemu"
-    },
-    {
-        "file": "/rides/2024-01-28_1426802605_From Coelemu to Puc\u00f3n.gpx",
-        "color": "#21D3C4",
-        "label": "From Coelemu to Puc\u00f3n"
-    },
-    {
-        "file": "/rides/2024-01-31_1428204940_From Palomares to Santa Juana.gpx",
-        "color": "#BE2A6F",
-        "label": "From Palomares to Santa Juana"
-    },
-    {
-        "file": "/rides/2024-01-31_1428362026_From Santa Juana to Nacimiento.gpx",
-        "color": "#FFD700",
-        "label": "From Santa Juana to Nacimiento"
-    },
-    {
-        "file": "/rides/2024-02-02_1429755200_From Nacimiento to Traigu\u00e9n.gpx",
-        "color": "#1E90FF",
-        "label": "From Nacimiento to Traigu\u00e9n"
-    },
-    {
-        "file": "/rides/2024-02-03_1430851076_From Huequ\u00e9n to Curacaut\u00edn.gpx",
-        "color": "#DAA520",
-        "label": "From Huequ\u00e9n to Curacaut\u00edn"
-    },
-    {
-        "file": "/rides/2024-02-06_1433502550_From Traigu\u00e9n to Curacaut\u00edn.gpx",
-        "color": "#411C6B",
-        "label": "From Traigu\u00e9n to Curacaut\u00edn"
-    },
-    {
-        "file": "/rides/2024-02-07_1434195736_To Melipeuco.gpx",
-        "color": "#21D3C4",
-        "label": "To Melipeuco"
-    }
+  {
+    "id": "2024-01-14_1415911228_From San Joaquín Poniente to Calera de Tango",
+    "file": "/rides/2024-01-14_1415911228_From%20San%20Joaqu%C3%ADn%20Poniente%20to%20Calera%20de%20Tango.gpx",
+    "date": "2024-01-14",
+    "label": "From San Joaquín Poniente to Calera de Tango",
+    "color": "#411C6B",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-15_1415990836_From Maipú to Isla de Maipo",
+    "file": "/rides/2024-01-15_1415990836_From%20Maip%C3%BA%20to%20Isla%20de%20Maipo.gpx",
+    "date": "2024-01-15",
+    "label": "From Maipú to Isla de Maipo",
+    "color": "#21D3C4",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-15_1416658643_From Isla de Maipo to San Fernando",
+    "file": "/rides/2024-01-15_1416658643_From%20Isla%20de%20Maipo%20to%20San%20Fernando.gpx",
+    "date": "2024-01-15",
+    "label": "From Isla de Maipo to San Fernando",
+    "color": "#BE2A6F",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-17_1417178636_From Los Lirios to Los Boldos",
+    "file": "/rides/2024-01-17_1417178636_From%20Los%20Lirios%20to%20Los%20Boldos.gpx",
+    "date": "2024-01-17",
+    "label": "From Los Lirios to Los Boldos",
+    "color": "#FFD700",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-20_1420212597_From Isla de Yáquil to Constitución",
+    "file": "/rides/2024-01-20_1420212597_From%20Isla%20de%20Y%C3%A1quil%20to%20Constituci%C3%B3n.gpx",
+    "date": "2024-01-20",
+    "label": "From Isla de Yáquil to Constitución",
+    "color": "#1E90FF",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-21_1420772495_From Lolol to Hualañé",
+    "file": "/rides/2024-01-21_1420772495_From%20Lolol%20to%20Huala%C3%B1%C3%A9.gpx",
+    "date": "2024-01-21",
+    "label": "From Lolol to Hualañé",
+    "color": "#DAA520",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-23_1421143188_From Hualañé to Constitución",
+    "file": "/rides/2024-01-23_1421143188_From%20Huala%C3%B1%C3%A9%20to%20Constituci%C3%B3n.gpx",
+    "date": "2024-01-23",
+    "label": "From Hualañé to Constitución",
+    "color": "#411C6B",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-23_1421359749_From Curepto to Constitución",
+    "file": "/rides/2024-01-23_1421359749_From%20Curepto%20to%20Constituci%C3%B3n.gpx",
+    "date": "2024-01-23",
+    "label": "From Curepto to Constitución",
+    "color": "#21D3C4",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-24_1422047382_From Constitución to Los Molinos",
+    "file": "/rides/2024-01-24_1422047382_From%20Constituci%C3%B3n%20to%20Los%20Molinos.gpx",
+    "date": "2024-01-24",
+    "label": "From Constitución to Los Molinos",
+    "color": "#BE2A6F",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-25_1422776241_From Constitución to Pelluhue",
+    "file": "/rides/2024-01-25_1422776241_From%20Constituci%C3%B3n%20to%20Pelluhue.gpx",
+    "date": "2024-01-25",
+    "label": "From Constitución to Pelluhue",
+    "color": "#FFD700",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-26_1423485489_From Pelluhue to Quirihue",
+    "file": "/rides/2024-01-26_1423485489_From%20Pelluhue%20to%20Quirihue.gpx",
+    "date": "2024-01-26",
+    "label": "From Pelluhue to Quirihue",
+    "color": "#1E90FF",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-27_1424566339_From Buchupureo to Quirihue",
+    "file": "/rides/2024-01-27_1424566339_From%20Buchupureo%20to%20Quirihue.gpx",
+    "date": "2024-01-27",
+    "label": "From Buchupureo to Quirihue",
+    "color": "#DAA520",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-27_1424697657_From Quirihue to Coelemu",
+    "file": "/rides/2024-01-27_1424697657_From%20Quirihue%20to%20Coelemu.gpx",
+    "date": "2024-01-27",
+    "label": "From Quirihue to Coelemu",
+    "color": "#411C6B",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-28_1426802605_From Coelemu to Pucón",
+    "file": "/rides/2024-01-28_1426802605_From%20Coelemu%20to%20Puc%C3%B3n.gpx",
+    "date": "2024-01-28",
+    "label": "From Coelemu to Pucón",
+    "color": "#21D3C4",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-31_1428204940_From Palomares to Santa Juana",
+    "file": "/rides/2024-01-31_1428204940_From%20Palomares%20to%20Santa%20Juana.gpx",
+    "date": "2024-01-31",
+    "label": "From Palomares to Santa Juana",
+    "color": "#BE2A6F",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-01-31_1428362026_From Santa Juana to Nacimiento",
+    "file": "/rides/2024-01-31_1428362026_From%20Santa%20Juana%20to%20Nacimiento.gpx",
+    "date": "2024-01-31",
+    "label": "From Santa Juana to Nacimiento",
+    "color": "#FFD700",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-02_1429755200_From Nacimiento to Traiguén",
+    "file": "/rides/2024-02-02_1429755200_From%20Nacimiento%20to%20Traigu%C3%A9n.gpx",
+    "date": "2024-02-02",
+    "label": "From Nacimiento to Traiguén",
+    "color": "#1E90FF",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-03_1430851076_From Huequén to Curacautín",
+    "file": "/rides/2024-02-03_1430851076_From%20Huequ%C3%A9n%20to%20Curacaut%C3%ADn.gpx",
+    "date": "2024-02-03",
+    "label": "From Huequén to Curacautín",
+    "color": "#DAA520",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-06_1433502550_From Traiguén to Curacautín",
+    "file": "/rides/2024-02-06_1433502550_From%20Traigu%C3%A9n%20to%20Curacaut%C3%ADn.gpx",
+    "date": "2024-02-06",
+    "label": "From Traiguén to Curacautín",
+    "color": "#411C6B",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-07_1434195736_To Melipeuco",
+    "file": "/rides/2024-02-07_1434195736_To%20Melipeuco.gpx",
+    "date": "2024-02-07",
+    "label": "To Melipeuco",
+    "color": "#21D3C4",
+    "source": "komoot",
+    "inferred": false,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-09_inferred_cycling",
+    "file": "/rides/2024-02-09_inferred_cycling.gpx",
+    "date": "2024-02-09",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-11_inferred_cycling",
+    "file": "/rides/2024-02-11_inferred_cycling.gpx",
+    "date": "2024-02-11",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-12_inferred_cycling",
+    "file": "/rides/2024-02-12_inferred_cycling.gpx",
+    "date": "2024-02-12",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-13_inferred_cycling",
+    "file": "/rides/2024-02-13_inferred_cycling.gpx",
+    "date": "2024-02-13",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-15_inferred_cycling",
+    "file": "/rides/2024-02-15_inferred_cycling.gpx",
+    "date": "2024-02-15",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-02-16_inferred_cycling",
+    "file": "/rides/2024-02-16_inferred_cycling.gpx",
+    "date": "2024-02-16",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-03-04_inferred_cycling",
+    "file": "/rides/2024-03-04_inferred_cycling.gpx",
+    "date": "2024-03-04",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-03-07_inferred_cycling",
+    "file": "/rides/2024-03-07_inferred_cycling.gpx",
+    "date": "2024-03-07",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-03-11_inferred_cycling",
+    "file": "/rides/2024-03-11_inferred_cycling.gpx",
+    "date": "2024-03-11",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  },
+  {
+    "id": "2024-03-17_inferred_cycling",
+    "file": "/rides/2024-03-17_inferred_cycling.gpx",
+    "date": "2024-03-17",
+    "label": "Inferred from phone location",
+    "color": "#888888",
+    "source": "timeline",
+    "inferred": true,
+    "videoUrl": null
+  }
 ]

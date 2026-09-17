@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Timeline-inferred" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk><name>2024-02-16 inferred cycling (from phone location)</name>
+    <trkseg>
+      <trkpt lat="-39.444398" lon="-71.5503824"><time>2024-02-16T16:12:00Z</time></trkpt>
+      <trkpt lat="-39.4442388" lon="-71.5530331"><time>2024-02-16T16:14:00Z</time></trkpt>
+      <trkpt lat="-39.4494588" lon="-71.5525066"><time>2024-02-16T16:20:00Z</time></trkpt>
+      <trkpt lat="-39.4586572" lon="-71.5503088"><time>2024-02-16T16:24:00Z</time></trkpt>
+      <trkpt lat="-39.4676958" lon="-71.552233"><time>2024-02-16T16:26:00Z</time></trkpt>
+      <trkpt lat="-39.4795187" lon="-71.5492557"><time>2024-02-16T16:32:00Z</time></trkpt>
+      <trkpt lat="-39.4887664" lon="-71.5472261"><time>2024-02-16T16:42:00Z</time></trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-39.6071843" lon="-71.3897759"><time>2024-02-16T21:50:00Z</time></trkpt>
+      <trkpt lat="-39.603634" lon="-71.3730556"><time>2024-02-16T21:59:00Z</time></trkpt>
+      <trkpt lat="-39.6094754" lon="-71.3582137"><time>2024-02-16T22:07:00Z</time></trkpt>
+      <trkpt lat="-39.6181459" lon="-71.3380999"><time>2024-02-16T22:21:00Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

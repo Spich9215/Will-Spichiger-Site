@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Timeline-inferred" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk><name>2024-03-04 inferred cycling (from phone location)</name>
+    <trkseg>
+      <trkpt lat="-40.2422498" lon="-71.3727866"><time>2024-03-04T19:42:00Z</time></trkpt>
+      <trkpt lat="-40.2909622" lon="-71.3849912"><time>2024-03-04T19:56:00Z</time></trkpt>
+      <trkpt lat="-40.2939671" lon="-71.3842305"><time>2024-03-04T19:57:00Z</time></trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-40.3325531" lon="-71.417531"><time>2024-03-04T20:19:00Z</time></trkpt>
+      <trkpt lat="-40.3409943" lon="-71.4247167"><time>2024-03-04T20:36:00Z</time></trkpt>
+      <trkpt lat="-40.3446174" lon="-71.4405715"><time>2024-03-04T20:39:00Z</time></trkpt>
+      <trkpt lat="-40.3495452" lon="-71.4459773"><time>2024-03-04T20:41:00Z</time></trkpt>
+      <trkpt lat="-40.363919" lon="-71.4509957"><time>2024-03-04T20:45:00Z</time></trkpt>
+      <trkpt lat="-40.3708504" lon="-71.4580538"><time>2024-03-04T20:48:00Z</time></trkpt>
+      <trkpt lat="-40.3758399" lon="-71.458139"><time>2024-03-04T20:50:00Z</time></trkpt>
+      <trkpt lat="-40.3895658" lon="-71.4665478"><time>2024-03-04T20:55:00Z</time></trkpt>
+      <trkpt lat="-40.3914499" lon="-71.4705549"><time>2024-03-04T20:56:00Z</time></trkpt>
+      <trkpt lat="-40.3944419" lon="-71.4718351"><time>2024-03-04T20:58:00Z</time></trkpt>
+      <trkpt lat="-40.3986782" lon="-71.478716"><time>2024-03-04T20:59:00Z</time></trkpt>
+      <trkpt lat="-40.4002572" lon="-71.4871009"><time>2024-03-04T21:00:00Z</time></trkpt>
+      <trkpt lat="-40.3990157" lon="-71.4849514"><time>2024-03-04T21:00:00Z</time></trkpt>
+      <trkpt lat="-40.4138729" lon="-71.5004498"><time>2024-03-04T21:05:00Z</time></trkpt>
+      <trkpt lat="-40.438753" lon="-71.533465"><time>2024-03-04T21:16:00Z</time></trkpt>
+      <trkpt lat="-40.438926" lon="-71.5337844"><time>2024-03-04T21:16:52Z</time></trkpt>
+      <trkpt lat="-40.4388809" lon="-71.5335292"><time>2024-03-04T21:16:52Z</time></trkpt>
+      <trkpt lat="-40.4387575" lon="-71.5334521"><time>2024-03-04T21:21:00Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

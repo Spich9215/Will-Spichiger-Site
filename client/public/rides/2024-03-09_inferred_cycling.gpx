@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Timeline-inferred" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk><name>2024-03-09 inferred cycling (from phone location)</name>
+    <trkseg>
+      <trkpt lat="-41.1343629" lon="-71.2915482"><time>2024-03-09T16:51:30Z</time></trkpt>
+      <trkpt lat="-41.1343629" lon="-71.2915482"><time>2024-03-09T16:52:00Z</time></trkpt>
+      <trkpt lat="-41.136134" lon="-71.2958963"><time>2024-03-09T16:56:00Z</time></trkpt>
+      <trkpt lat="-41.1343259" lon="-71.2904758"><time>2024-03-09T17:01:00Z</time></trkpt>
+      <trkpt lat="-41.1354364" lon="-71.3013659"><time>2024-03-09T17:05:00Z</time></trkpt>
+      <trkpt lat="-41.1364259" lon="-71.2940466"><time>2024-03-09T17:11:00Z</time></trkpt>
+      <trkpt lat="-41.13446" lon="-71.30095"><time>2024-03-09T17:17:00Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

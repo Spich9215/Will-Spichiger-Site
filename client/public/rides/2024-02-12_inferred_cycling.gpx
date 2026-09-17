@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Timeline-inferred" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk><name>2024-02-12 inferred cycling (from phone location)</name>
+    <trkseg>
+      <trkpt lat="-39.5147457" lon="-71.9036385"><time>2024-02-12T19:12:00Z</time></trkpt>
+      <trkpt lat="-39.5014079" lon="-71.8745269"><time>2024-02-12T19:26:00Z</time></trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="-39.3225975" lon="-72.2264732"><time>2024-02-12T22:27:00Z</time></trkpt>
+      <trkpt lat="-39.309075" lon="-72.2327826"><time>2024-02-12T22:29:00Z</time></trkpt>
+      <trkpt lat="-39.3015774" lon="-72.2334151"><time>2024-02-12T22:32:00Z</time></trkpt>
+      <trkpt lat="-39.2995805" lon="-72.2320681"><time>2024-02-12T22:34:00Z</time></trkpt>
+      <trkpt lat="-39.2971079" lon="-72.2292006"><time>2024-02-12T22:37:00Z</time></trkpt>
+      <trkpt lat="-39.292409" lon="-72.2299589"><time>2024-02-12T22:39:00Z</time></trkpt>
+      <trkpt lat="-39.2883215" lon="-72.2269218"><time>2024-02-12T22:40:00Z</time></trkpt>
+      <trkpt lat="-39.2861459" lon="-72.2262005"><time>2024-02-12T22:43:00Z</time></trkpt>
+      <trkpt lat="-39.2897172" lon="-72.223943"><time>2024-02-12T22:47:00Z</time></trkpt>
+      <trkpt lat="-39.284423" lon="-72.2232395"><time>2024-02-12T22:50:00Z</time></trkpt>
+      <trkpt lat="-39.2994403" lon="-72.133658"><time>2024-02-12T22:57:00Z</time></trkpt>
+      <trkpt lat="-39.3035872" lon="-72.0837745"><time>2024-02-12T23:05:00Z</time></trkpt>
+      <trkpt lat="-39.3055889" lon="-72.0522444"><time>2024-02-12T23:08:00Z</time></trkpt>
+      <trkpt lat="-39.2863475" lon="-71.9910721"><time>2024-02-12T23:14:00Z</time></trkpt>
+      <trkpt lat="-39.2795598" lon="-71.9773714"><time>2024-02-12T23:22:00Z</time></trkpt>
+      <trkpt lat="-39.2774056" lon="-71.9784865"><time>2024-02-12T23:23:57Z</time></trkpt>
+      <trkpt lat="-39.277152" lon="-71.979326"><time>2024-02-12T23:23:57Z</time></trkpt>
+      <trkpt lat="-39.2774056" lon="-71.9784865"><time>2024-02-12T23:24:00Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

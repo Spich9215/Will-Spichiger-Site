@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Timeline-inferred" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk><name>2024-02-11 inferred cycling (from phone location)</name>
+    <trkseg>
+      <trkpt lat="-39.281449" lon="-72.2231178"><time>2024-02-11T15:21:00Z</time></trkpt>
+      <trkpt lat="-39.2834821" lon="-72.2220013"><time>2024-02-11T15:21:14Z</time></trkpt>
+      <trkpt lat="-39.2834821" lon="-72.2220013"><time>2024-02-11T15:29:00Z</time></trkpt>
+      <trkpt lat="-39.2870785" lon="-72.2207712"><time>2024-02-11T15:31:00Z</time></trkpt>
+      <trkpt lat="-39.2914257" lon="-72.2167683"><time>2024-02-11T15:33:00Z</time></trkpt>
+      <trkpt lat="-39.2920321" lon="-72.214011"><time>2024-02-11T15:35:00Z</time></trkpt>
+      <trkpt lat="-39.2938799" lon="-72.2113949"><time>2024-02-11T15:37:00Z</time></trkpt>
+      <trkpt lat="-39.2920321" lon="-72.214011"><time>2024-02-11T15:39:00Z</time></trkpt>
+      <trkpt lat="-39.2938127" lon="-72.1719292"><time>2024-02-11T15:47:00Z</time></trkpt>
+      <trkpt lat="-39.2987751" lon="-72.1327176"><time>2024-02-11T15:57:00Z</time></trkpt>
+      <trkpt lat="-39.3010186" lon="-72.1218538"><time>2024-02-11T15:59:00Z</time></trkpt>
+      <trkpt lat="-39.2973644" lon="-72.1055468"><time>2024-02-11T16:03:00Z</time></trkpt>
+      <trkpt lat="-39.303833" lon="-72.0811809"><time>2024-02-11T16:09:00Z</time></trkpt>
+      <trkpt lat="-39.3018596" lon="-72.0714208"><time>2024-02-11T16:11:00Z</time></trkpt>
+      <trkpt lat="-39.3056613" lon="-72.0640652"><time>2024-02-11T16:13:00Z</time></trkpt>
+      <trkpt lat="-39.3037756" lon="-72.0433206"><time>2024-02-11T16:19:00Z</time></trkpt>
+      <trkpt lat="-39.3006813" lon="-72.0234313"><time>2024-02-11T16:23:00Z</time></trkpt>
+      <trkpt lat="-39.2891827" lon="-71.9984291"><time>2024-02-11T16:31:00Z</time></trkpt>
+      <trkpt lat="-39.2794424" lon="-71.9774666"><time>2024-02-11T16:37:00Z</time></trkpt>
+      <trkpt lat="-39.2777801" lon="-71.9747728"><time>2024-02-11T16:42:00Z</time></trkpt>
+      <trkpt lat="-39.2756209" lon="-71.9769955"><time>2024-02-11T16:49:00Z</time></trkpt>
+      <trkpt lat="-39.2755079" lon="-71.9778783"><time>2024-02-11T16:51:00Z</time></trkpt>
+      <trkpt lat="-39.275526" lon="-71.976757"><time>2024-02-11T16:51:06Z</time></trkpt>
+      <trkpt lat="-39.2774908" lon="-71.9746757"><time>2024-02-11T16:51:06Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
