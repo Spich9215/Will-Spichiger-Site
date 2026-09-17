@@ -1,5 +1,8 @@
 #root {
-  --header-height: 300px;  /* Adjust this value to your header's height */
+  /* Height of the fixed nav bar (Header now only holds the Navbar) — bump this
+     if the nav's own padding/font-size ever changes, so page content doesn't
+     get tucked under it. */
+  --header-height: 4.5rem;
   max-width: 1280px;
   margin: 0;
   padding: 1rem;
@@ -20,6 +23,13 @@
 
   /* Ensures the header appears above all other content */
   z-index: 1000;
+}
+
+/* Pushes page content below the fixed header so it never sits underneath it,
+   no matter which route is showing. */
+.content-area {
+  display: block;
+  padding-top: var(--header-height);
 }
 
 .logo {
@@ -58,6 +68,14 @@
 
 .site-title {
   padding: 10px;
+}
+
+/* Page-level heading, used on Home so the site title only shows there
+   instead of in the fixed header on every page. */
+.home-heading {
+  font-size: 1.9rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
 }
 
 .read-the-docs {

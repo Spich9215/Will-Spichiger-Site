@@ -5,9 +5,10 @@ import React from 'react';
 const Home: React.FC = () => {
   return (
     <div className="page-content"> {/* Use a consistent class for page content */}
+      <h1 className="home-heading">Will Spichiger's Personal Site</h1>
       <p>
-        This site is a work in progress.  
-        <br></br> 
+        This site is a work in progress.
+        <br></br>
         I expect it to be a modicum of self expression akin to early internet sites as well as an exhibition of technical projects.
         There are existing platforms and tools in existence that I could use, however, I am electing to build this custom site for learning.
         <br></br>

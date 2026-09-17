@@ -18,6 +18,9 @@ const Navbar: React.FC = () => {
           <Link to="/books" className="nav-link">Books</Link>
         </li>
         <li className="nav-item">
+          <Link to="/credentials" className="nav-link">Credentials</Link>
+        </li>
+        <li className="nav-item">
           <Link to="/notes" className="nav-link">Notes & Features</Link>
         </li>
         <li className="nav-item">

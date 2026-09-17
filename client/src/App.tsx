@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Books from './components/Books';
 import Notes from './components/Notes';
 import Travel from './components/Travel';
+import Credentials from './components/Credentials';
 
 // Import your layout components
 import Header from './components/Header';
@@ -20,14 +21,15 @@ function App() {
       <div id="root-container"> {/* You might want to style this container in App.css */}
         <Header />
 
+        {/* .content-area has padding-top: var(--header-height) in App.css to clear
+            the fixed nav bar in Header, so it doesn't need an inline offset here. */}
         <main className="content-area">
-        {/* This margin-top pushes the main content down by 60px */}
-        <main style={{ marginTop: '125px' }}></main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<Books />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/travel" element={<Travel />} />
+            <Route path="/credentials" element={<Credentials />} />
             {/* You might want a 404 page for unmatched routes */}
             <Route path="*" element={<h2>Page Not Found</h2>} />
           </Routes>
