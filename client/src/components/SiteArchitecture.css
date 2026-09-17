@@ -1,0 +1,34 @@
+/* client/src/components/SiteArchitecture.css */
+
+.site-architecture-page {
+  text-align: left;
+}
+
+.architecture-diagram-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.architecture-diagram-container:empty::before {
+  content: 'Loading diagram...';
+  display: block;
+  padding: 2rem 0;
+  text-align: center;
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+.architecture-diagram-container .mxgraph {
+  margin: 0 auto;
+}
+
+@media (prefers-color-scheme: light) {
+  .architecture-diagram-container {
+    border-color: rgba(0, 0, 0, 0.12);
+  }
+}

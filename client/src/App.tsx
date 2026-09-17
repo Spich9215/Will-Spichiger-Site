@@ -9,6 +9,7 @@ import Books from './components/Books';
 import Notes from './components/Notes';
 import Travel from './components/Travel';
 import Credentials from './components/Credentials';
+import SiteArchitecture from './components/SiteArchitecture';
 
 // Import your layout components
 import Header from './components/Header';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/notes" element={<Notes />} />
             <Route path="/travel" element={<Travel />} />
             <Route path="/credentials" element={<Credentials />} />
+            <Route path="/architecture" element={<SiteArchitecture />} />
             {/* You might want a 404 page for unmatched routes */}
             <Route path="*" element={<h2>Page Not Found</h2>} />
           </Routes>
