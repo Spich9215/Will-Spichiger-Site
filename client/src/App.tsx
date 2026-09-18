@@ -6,6 +6,7 @@ import './App.css';
 // Import your page components
 import Home from './components/Home';
 import Books from './components/Books';
+import BookQuotes from './components/BookQuotes';
 import Travel from './components/Travel';
 import Credentials from './components/Credentials';
 import SiteArchitecture from './components/SiteArchitecture';
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<Books />} />
+            <Route path="/books/quotes" element={<BookQuotes />} />
             <Route path="/travel" element={<Travel />} />
             <Route path="/credentials" element={<Credentials />} />
             <Route path="/architecture" element={<SiteArchitecture />} />

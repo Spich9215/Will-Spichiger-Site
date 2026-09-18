@@ -12,6 +12,101 @@
   <trk>
     <name>From Buchupureo to Quirihue</name>
     <trkseg>
+      <trkpt lat="-36.079521" lon="-72.783173">
+        <time>2024-01-26T21:54:55.805Z</time>
+      </trkpt>
+      <trkpt lat="-36.078552" lon="-72.788121">
+        <time>2024-01-26T22:30:49.668Z</time>
+      </trkpt>
+      <trkpt lat="-36.078711" lon="-72.789792">
+        <time>2024-01-26T23:06:43.531Z</time>
+      </trkpt>
+      <trkpt lat="-36.077384" lon="-72.791767">
+        <time>2024-01-26T23:42:37.394Z</time>
+      </trkpt>
+      <trkpt lat="-36.077906" lon="-72.793643">
+        <time>2024-01-27T00:18:31.257Z</time>
+      </trkpt>
+      <trkpt lat="-36.078784" lon="-72.794163">
+        <time>2024-01-27T00:54:25.120Z</time>
+      </trkpt>
+      <trkpt lat="-36.080091" lon="-72.795654">
+        <time>2024-01-27T01:30:18.983Z</time>
+      </trkpt>
+      <trkpt lat="-36.078877" lon="-72.797293">
+        <time>2024-01-27T02:06:12.846Z</time>
+      </trkpt>
+      <trkpt lat="-36.078563" lon="-72.798709">
+        <time>2024-01-27T02:42:06.710Z</time>
+      </trkpt>
+      <trkpt lat="-36.078887" lon="-72.800117">
+        <time>2024-01-27T03:18:00.573Z</time>
+      </trkpt>
+      <trkpt lat="-36.078290" lon="-72.801371">
+        <time>2024-01-27T03:53:54.436Z</time>
+      </trkpt>
+      <trkpt lat="-36.078650" lon="-72.803544">
+        <time>2024-01-27T04:29:48.299Z</time>
+      </trkpt>
+      <trkpt lat="-36.079377" lon="-72.803858">
+        <time>2024-01-27T05:05:42.162Z</time>
+      </trkpt>
+      <trkpt lat="-36.080451" lon="-72.803418">
+        <time>2024-01-27T05:41:36.025Z</time>
+      </trkpt>
+      <trkpt lat="-36.080854" lon="-72.803785">
+        <time>2024-01-27T06:17:29.888Z</time>
+      </trkpt>
+      <trkpt lat="-36.081248" lon="-72.804961">
+        <time>2024-01-27T06:53:23.752Z</time>
+      </trkpt>
+      <trkpt lat="-36.081798" lon="-72.805026">
+        <time>2024-01-27T07:29:17.615Z</time>
+      </trkpt>
+      <trkpt lat="-36.083221" lon="-72.800366">
+        <time>2024-01-27T08:05:11.478Z</time>
+      </trkpt>
+      <trkpt lat="-36.084076" lon="-72.799826">
+        <time>2024-01-27T08:41:05.341Z</time>
+      </trkpt>
+      <trkpt lat="-36.084676" lon="-72.800411">
+        <time>2024-01-27T09:16:59.204Z</time>
+      </trkpt>
+      <trkpt lat="-36.084615" lon="-72.802018">
+        <time>2024-01-27T09:52:53.067Z</time>
+      </trkpt>
+      <trkpt lat="-36.085193" lon="-72.803262">
+        <time>2024-01-27T10:28:46.930Z</time>
+      </trkpt>
+      <trkpt lat="-36.086539" lon="-72.803163">
+        <time>2024-01-27T11:04:40.793Z</time>
+      </trkpt>
+      <trkpt lat="-36.088099" lon="-72.803652">
+        <time>2024-01-27T11:40:34.657Z</time>
+      </trkpt>
+      <trkpt lat="-36.089308" lon="-72.804652">
+        <time>2024-01-27T12:16:28.520Z</time>
+      </trkpt>
+      <trkpt lat="-36.090561" lon="-72.806736">
+        <time>2024-01-27T12:52:22.383Z</time>
+      </trkpt>
+      <trkpt lat="-36.092082" lon="-72.807697">
+        <time>2024-01-27T13:28:16.246Z</time>
+      </trkpt>
+      <trkpt lat="-36.093659" lon="-72.807693">
+        <time>2024-01-27T14:04:10.109Z</time>
+      </trkpt>
+      <trkpt lat="-36.095134" lon="-72.809603">
+        <time>2024-01-27T14:40:03.972Z</time>
+      </trkpt>
+      <trkpt lat="-36.097575" lon="-72.810621">
+        <time>2024-01-27T15:15:57.835Z</time>
+      </trkpt>
+      <trkpt lat="-36.099002" lon="-72.810478">
+        <time>2024-01-27T15:51:51.699Z</time>
+      </trkpt>
+    </trkseg>
+    <trkseg>
       <trkpt lat="-36.101099" lon="-72.809636">
         <ele>33.602236</ele>
         <time>2024-01-27T15:51:51.699Z</time>

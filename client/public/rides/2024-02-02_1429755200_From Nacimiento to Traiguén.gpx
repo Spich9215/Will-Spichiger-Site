@@ -5777,5 +5777,34 @@
         <time>2024-02-02T20:14:14.470Z</time>
       </trkpt>
     </trkseg>
+    <trkseg>
+      <trkpt lat="-37.623224" lon="-72.591970">
+        <time>2024-02-02T20:14:14.470Z</time>
+      </trkpt>
+      <trkpt lat="-37.673210" lon="-72.589291">
+        <time>2024-02-02T22:33:35.761Z</time>
+      </trkpt>
+      <trkpt lat="-37.698635" lon="-72.603179">
+        <time>2024-02-03T00:52:57.052Z</time>
+      </trkpt>
+      <trkpt lat="-37.724982" lon="-72.608102">
+        <time>2024-02-03T03:12:18.344Z</time>
+      </trkpt>
+      <trkpt lat="-37.789760" lon="-72.645713">
+        <time>2024-02-03T05:31:39.635Z</time>
+      </trkpt>
+      <trkpt lat="-37.814864" lon="-72.670259">
+        <time>2024-02-03T07:51:00.926Z</time>
+      </trkpt>
+      <trkpt lat="-37.812771" lon="-72.673038">
+        <time>2024-02-03T10:10:22.218Z</time>
+      </trkpt>
+      <trkpt lat="-37.814401" lon="-72.674670">
+        <time>2024-02-03T12:29:43.509Z</time>
+      </trkpt>
+      <trkpt lat="-37.816627" lon="-72.675769">
+        <time>2024-02-03T14:49:04.801Z</time>
+      </trkpt>
+    </trkseg>
   </trk>
 </gpx>

@@ -13,17 +13,31 @@ interface MapProps {
   onSelectRide: (id: string) => void;
 }
 
-// Cache of parsed coordinates per ride file, so re-renders (e.g. on selection change)
-// don't re-fetch/re-parse GPX files that were already loaded.
-const coordsCache: Record<string, google.maps.LatLngLiteral[]> = {};
+type RideCoordsById = Record<string, google.maps.LatLngLiteral[]>;
+
+// ride-coords.json is pre-parsed at build time (see scripts/build-ride-coords.mjs)
+// from the raw GPX files, keyed by ride id. Fetching this single cached file
+// instead of 30+ individual GPX files (and parsing their XML in the browser)
+// is what makes the Travel page's map load quickly. Module-level so every
+// Map instance shares one fetch instead of re-requesting it.
+let rideCoordsPromise: Promise<RideCoordsById> | null = null;
+const fetchRideCoords = (): Promise<RideCoordsById> => {
+  if (!rideCoordsPromise) {
+    rideCoordsPromise = fetch('/ride-coords.json').then((res) => {
+      if (!res.ok) throw new Error(`Failed to fetch ride-coords.json: HTTP ${res.status}`);
+      return res.json();
+    });
+  }
+  return rideCoordsPromise;
+};
 
 const Map: React.FC<MapProps> = ({ rides, selectedId, onSelectRide }) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const googleMapInstanceRef = useRef<google.maps.Map | null>(null);
-  // Track drawn polylines/markers by ride id so we can restyle on selection
-  // and avoid redrawing everything on every render.
+  // Track drawn polylines by ride id so we can restyle on selection and
+  // avoid redrawing everything on every render.
   const polylinesRef = useRef<Record<string, google.maps.Polyline>>({});
-  const markersRef = useRef<Record<string, google.maps.Marker>>({});
+  const rideCoordsRef = useRef<RideCoordsById>({});
   const onSelectRideRef = useRef(onSelectRide);
   onSelectRideRef.current = onSelectRide;
   // Tracks whether we've already framed the map to the full trip on load, so
@@ -40,38 +54,18 @@ const Map: React.FC<MapProps> = ({ rides, selectedId, onSelectRide }) => {
     const map = googleMapInstanceRef.current;
     if (!map || !window.google?.maps) return;
 
+    let rideCoords: RideCoordsById;
+    try {
+      rideCoords = await fetchRideCoords();
+      rideCoordsRef.current = rideCoords;
+    } catch (e) {
+      console.error('Error loading ride-coords.json:', e);
+      return;
+    }
+
     for (const ride of rides) {
-      let coords = coordsCache[ride.file];
-
-      if (!coords) {
-        try {
-          const gpxRes = await fetch(ride.file);
-          if (!gpxRes.ok) {
-            console.warn(`Failed to fetch GPX "${ride.file}": ${gpxRes.status}`);
-            continue;
-          }
-          const gpxText = await gpxRes.text();
-          const xml = new DOMParser().parseFromString(gpxText, 'application/xml');
-          if (xml.querySelector('parsererror')) {
-            console.error(`XML parse error for "${ride.file}"`);
-            continue;
-          }
-          const trkpts = xml.getElementsByTagName('trkpt');
-          const parsed: google.maps.LatLngLiteral[] = [];
-          for (let i = 0; i < trkpts.length; i++) {
-            const lat = parseFloat(trkpts[i].getAttribute('lat') || '');
-            const lng = parseFloat(trkpts[i].getAttribute('lon') || '');
-            if (!isNaN(lat) && !isNaN(lng)) parsed.push({ lat, lng });
-          }
-          coords = parsed;
-          coordsCache[ride.file] = coords;
-        } catch (e) {
-          console.error(`Error loading "${ride.file}":`, e);
-          continue;
-        }
-      }
-
-      if (!coords.length) continue;
+      const coords = rideCoords[ride.id];
+      if (!coords || !coords.length) continue;
 
       if (!polylinesRef.current[ride.id]) {
         const polyline = new window.google.maps.Polyline({
@@ -81,28 +75,13 @@ const Map: React.FC<MapProps> = ({ rides, selectedId, onSelectRide }) => {
         });
         polyline.addListener('click', () => onSelectRideRef.current(ride.id));
         polylinesRef.current[ride.id] = polyline;
-
-        const marker = new window.google.maps.Marker({
-          position: coords[0],
-          map,
-          title: `${ride.date} — ${ride.label}`,
-          icon: {
-            path: window.google.maps.SymbolPath.CIRCLE,
-            scale: 5,
-            fillColor: ride.color || '#000000',
-            fillOpacity: 1,
-            strokeWeight: 0,
-          },
-        });
-        marker.addListener('click', () => onSelectRideRef.current(ride.id));
-        markersRef.current[ride.id] = marker;
       }
     }
 
     // Frame the whole Santiago-to-Bariloche trip on first load, instead of
     // relying on a guessed center/zoom that may crop either end of the route.
     if (!hasFitInitialViewRef.current && rides.length) {
-      const allCoords = rides.flatMap((ride) => coordsCache[ride.file] || []);
+      const allCoords = rides.flatMap((ride) => rideCoords[ride.id] || []);
       if (allCoords.length) {
         const bounds = new window.google.maps.LatLngBounds();
         allCoords.forEach((c) => bounds.extend(c));
@@ -157,7 +136,7 @@ const Map: React.FC<MapProps> = ({ rides, selectedId, onSelectRide }) => {
 
     if (selectedId) {
       const selectedRide = rides.find((r) => r.id === selectedId);
-      const coords = selectedRide ? coordsCache[selectedRide.file] : null;
+      const coords = selectedRide ? rideCoordsRef.current[selectedRide.id] : null;
       const map = googleMapInstanceRef.current;
       if (coords && coords.length && map && window.google?.maps) {
         const bounds = new window.google.maps.LatLngBounds();

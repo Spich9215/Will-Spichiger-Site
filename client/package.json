@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/fetch-goodreads.mjs",
+    "predev": "node scripts/fetch-goodreads.mjs && node scripts/build-ride-coords.mjs",
     "dev": "vite",
-    "prebuild": "node scripts/fetch-goodreads.mjs",
+    "prebuild": "node scripts/fetch-goodreads.mjs && node scripts/build-ride-coords.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

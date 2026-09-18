@@ -136,6 +136,20 @@ export const credentials: Credential[] = [
     fullImage: '/credentials/full/aws-saa-badge.jpg',
   },
   {
+    id: 'stevens-ms-cs',
+    issuingOrganization: 'Stevens Institute of Technology',
+    issueDate: '2021-05-26',
+    credentialName: 'Master of Science - Computer Science',
+    type: 'Degree',
+    skills: ['Computer Science Fundamentals', 'Algorithms', 'Software Engineering', 'Graduate Research'],
+    description:
+      'Graduate degree conferred by Stevens Institute of Technology under the authority of the Trustees, issued on recommendation of the faculty.',
+    estimatedTimeCommitment: 'Graduate program (part-time/full-time coursework)',
+    credentialUrl: 'https://www.parchment.com/lp/award/634de3e2-52c3-4266-8fe7-806657ac9a06',
+    thumbnail: '/credentials/thumbs/stevens-ms-cs.jpg',
+    fullImage: '/credentials/full/stevens-ms-cs.jpg',
+  },
+  {
     id: 'aws-security-specialty',
     issuingOrganization: 'Coursera / Packt',
     issueDate: '2026-01-21',
