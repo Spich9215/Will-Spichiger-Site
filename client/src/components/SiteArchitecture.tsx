@@ -17,6 +17,35 @@ declare global {
   }
 }
 
+const notesContent = `
+## How I Built This Site
+
+This section details the technologies and tools used in the creation and deployment of this website.
+
+### AWS Infrastructure & Tools
+* **AWS Route 53**: Registers and manages the site's domain, routing \`williamtaylorspichiger.com\` to CloudFront via a DNS alias record.
+* **AWS S3**: Stores the built static site files (HTML/CSS/JS) as a private origin bucket — nothing in it is reachable directly by visitors.
+* **AWS CloudFront**: A global CDN in front of S3 that terminates HTTPS, caches content at edge locations worldwide, and falls back to \`index.html\` so client-side routes work on a direct load.
+* **AWS Certificate Manager (ACM)**: Issues and manages the TLS certificate (in \`us-east-1\`, as CloudFront requires) that lets the site serve HTTPS on a custom domain.
+* **AWS IAM**: Provides a deploy-scoped user whose access keys, stored only as a GitHub Actions secret, let the CI pipeline authenticate to AWS without broad account access.
+
+### Accessing External Systems
+* **Google Maps JavaScript API**: Renders GPX ride data as an interactive map on the Travel page. The call happens directly from the visitor's browser, using an API key baked into the build.
+* **Goodreads RSS Feed**: Goodreads retired its public API in 2020, so a prebuild script fetches their still-public per-shelf RSS feed to pull my "read" shelf automatically before every build, keeping the Books page current without manual edits.
+
+### Software Solutions
+* **Vite & React**: The core frontend framework and build tool — Vite compiles and bundles the TypeScript/React source into the static HTML/CSS/JS that ships to visitors.
+* **GitHub Actions**: Automates the deploy pipeline end to end — installing dependencies, running the build, syncing output to S3, and invalidating the CloudFront cache on every push to \`main\`. Secrets (AWS keys, the Maps API key, the CloudFront distribution ID) are stored as encrypted GitHub Actions secrets rather than in the codebase.
+
+---
+
+### Features I Want to Add
+* **Node.js Web Application Migration**: I may migrate this static site to a Node.js web application in a new branch.
+* **GoPro Videos from Cycling Trip**: Integrate GoPro videos from my cycling trips, view metadata, and analyze the cost of supplementing the trip.
+* **Migrate from S3 to Elastic Beanstalk**: Transition from S3 to Elastic Beanstalk for a more robust web application hosting solution.
+* **HTTPS Security**: Figure out why my site is not showing up as HTTPS Secure.
+`;
+
 const writeupContent = `
 This site is a static React application, but "static" undersells what's actually happening behind it. There are two distinct flows worth separating: what happens when I push a change, and what happens when someone visits the site. The diagram above splits along exactly that line.
 
@@ -101,6 +130,9 @@ const SiteArchitecture: React.FC = () => {
   return (
     <div className="page-content site-architecture-page">
       <h2>Site Architecture</h2>
+      <div className="prose">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{notesContent}</ReactMarkdown>
+      </div>
       <div ref={diagramHostRef} className="architecture-diagram-container" />
       <div className="prose">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{writeupContent}</ReactMarkdown>

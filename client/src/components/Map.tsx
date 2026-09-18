@@ -26,6 +26,9 @@ const Map: React.FC<MapProps> = ({ rides, selectedId, onSelectRide }) => {
   const markersRef = useRef<Record<string, google.maps.Marker>>({});
   const onSelectRideRef = useRef(onSelectRide);
   onSelectRideRef.current = onSelectRide;
+  // Tracks whether we've already framed the map to the full trip on load, so
+  // we don't keep re-fitting (and undoing a user's selection zoom) on rerenders.
+  const hasFitInitialViewRef = useRef(false);
 
   const styleForRide = (ride: RideEntry, isSelected: boolean) => ({
     strokeColor: ride.color || '#FF0000',
@@ -93,6 +96,18 @@ const Map: React.FC<MapProps> = ({ rides, selectedId, onSelectRide }) => {
         });
         marker.addListener('click', () => onSelectRideRef.current(ride.id));
         markersRef.current[ride.id] = marker;
+      }
+    }
+
+    // Frame the whole Santiago-to-Bariloche trip on first load, instead of
+    // relying on a guessed center/zoom that may crop either end of the route.
+    if (!hasFitInitialViewRef.current && rides.length) {
+      const allCoords = rides.flatMap((ride) => coordsCache[ride.file] || []);
+      if (allCoords.length) {
+        const bounds = new window.google.maps.LatLngBounds();
+        allCoords.forEach((c) => bounds.extend(c));
+        map.fitBounds(bounds, 50);
+        hasFitInitialViewRef.current = true;
       }
     }
   };

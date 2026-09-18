@@ -1,12 +1,11 @@
 // client/src/App.tsx
 //import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 // Import your page components
 import Home from './components/Home';
 import Books from './components/Books';
-import Notes from './components/Notes';
 import Travel from './components/Travel';
 import Credentials from './components/Credentials';
 import SiteArchitecture from './components/SiteArchitecture';
@@ -28,10 +27,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<Books />} />
-            <Route path="/notes" element={<Notes />} />
             <Route path="/travel" element={<Travel />} />
             <Route path="/credentials" element={<Credentials />} />
             <Route path="/architecture" element={<SiteArchitecture />} />
+            {/* Notes & Features content now lives at the top of the Architecture page */}
+            <Route path="/notes" element={<Navigate to="/architecture" replace />} />
             {/* You might want a 404 page for unmatched routes */}
             <Route path="*" element={<h2>Page Not Found</h2>} />
           </Routes>

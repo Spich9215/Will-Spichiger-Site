@@ -75,6 +75,11 @@ export const siteArchitectureDiagramXml = `<mxfile host="app.diagrams.net">
           <mxGeometry x="1020" y="392" width="180" height="80" as="geometry" />
         </mxCell>
 
+        <!-- Goodreads: external third-party feed, pulled by the build itself (prebuild script), not the browser -->
+        <mxCell id="goodreads" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#553818;strokeColor=#3a2510;fontColor=#ffffff;fontSize=12;" value="Goodreads RSS Feed&#10;(public &quot;read&quot; shelf)&#10;fetched during CI build" vertex="1">
+          <mxGeometry x="700" y="210" width="190" height="80" as="geometry" />
+        </mxCell>
+
         <!-- ===== Edges: Deploy pipeline ===== -->
         <mxCell id="e1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;endArrow=block;strokeColor=#333333;" value="git push (main)" edge="1" source="dev" target="ghrepo">
           <mxGeometry relative="1" as="geometry">
@@ -107,6 +112,9 @@ export const siteArchitectureDiagramXml = `<mxfile host="app.diagrams.net">
           </mxGeometry>
         </mxCell>
         <mxCell id="e11" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;fontSize=10;endArrow=block;strokeColor=#999999;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" value="API key baked into&#10;build (VITE_Maps_API_KEY)" edge="1" source="secretsnote" target="gmaps">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;fontSize=10;endArrow=block;strokeColor=#8a5a2b;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" value="prebuild script fetches&#10;&quot;read&quot; shelf RSS" edge="1" source="ghactions" target="goodreads">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 

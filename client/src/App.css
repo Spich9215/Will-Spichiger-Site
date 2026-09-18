@@ -1,11 +1,7 @@
 #root {
-  /* Height of the fixed nav bar (Header now only holds the Navbar) — bump this
-     if the nav's own padding/font-size ever changes, so page content doesn't
-     get tucked under it. */
-  --header-height: 4.5rem;
   max-width: 1280px;
-  margin: 0;
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 0 1rem 1rem;
   text-align: left;
 }
 
@@ -26,10 +22,13 @@
 }
 
 /* Pushes page content below the fixed header so it never sits underneath it,
-   no matter which route is showing. */
+   no matter which route is showing. --header-height is kept in sync with the
+   header's real rendered height (including when the nav wraps to extra rows
+   on narrow screens) by a ResizeObserver in Header.tsx; the value here is
+   just the fallback used for the instant before that JS runs. */
 .content-area {
   display: block;
-  padding-top: var(--header-height);
+  padding-top: calc(var(--header-height, 4.5rem) + 0.75rem);
 }
 
 .logo {
@@ -135,4 +134,13 @@
   /* Add space between outline and element */
   border-radius: 0.375rem;
   /* Match border-radius */
+}
+
+/* On narrow screens the nav wraps to multiple rows; keep it compact so it
+   doesn't eat too much vertical space above the page content. */
+@media (max-width: 640px) {
+  .nav-link {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+  }
 }

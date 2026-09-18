@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Map from './Map';
 import type { RideEntry } from '../types/rides';
+import './Travel.css';
 
 const formatDate = (iso: string): string => {
   const [y, m, d] = iso.split('-').map(Number);
@@ -36,22 +37,12 @@ const Travel: React.FC = () => {
 
       {loadError && <p style={{ color: '#c0392b' }}>Could not load ride data: {loadError}</p>}
 
-      <div
-        className="travel-layout"
-        style={{ display: 'flex', gap: '1rem', alignItems: 'stretch', flexWrap: 'wrap' }}
-      >
-        <div
-          className="ride-list"
-          style={{
-            width: '280px',
-            maxHeight: '600px',
-            overflowY: 'auto',
-            border: '1px solid #333',
-            borderRadius: '6px',
-            padding: '0.5rem',
-            flexShrink: 0,
-          }}
-        >
+      <div className="travel-layout">
+        <div className="travel-map-pane">
+          <Map rides={rides} selectedId={selectedId} onSelectRide={setSelectedId} />
+        </div>
+
+        <div className="travel-ride-list">
           {rides.map((ride) => (
             <button
               key={ride.id}
@@ -80,10 +71,6 @@ const Travel: React.FC = () => {
               </div>
             </button>
           ))}
-        </div>
-
-        <div style={{ flex: '1 1 480px', minWidth: '320px', height: '600px' }}>
-          <Map rides={rides} selectedId={selectedId} onSelectRide={setSelectedId} />
         </div>
       </div>
 

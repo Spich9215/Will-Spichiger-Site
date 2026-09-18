@@ -8,7 +8,7 @@ export interface Credential {
   issueDate: string; // ISO format YYYY-MM-DD, used for sorting
   expirationDate?: string; // ISO format YYYY-MM-DD, if the credential can expire
   credentialName: string;
-  type: 'Degree' | 'Certification' | 'Specialization';
+  type: 'Degree' | 'Certification' | 'Specialization' | 'Course';
   skills: string[];
   description: string;
   estimatedTimeCommitment: string;
@@ -134,5 +134,46 @@ export const credentials: Credential[] = [
     credentialUrl: 'https://aws.amazon.com/verification',
     thumbnail: '/credentials/thumbs/aws-saa-badge.jpg',
     fullImage: '/credentials/full/aws-saa-badge.jpg',
+  },
+  {
+    id: 'aws-security-specialty',
+    issuingOrganization: 'Coursera / Packt',
+    issueDate: '2026-01-21',
+    credentialName: 'SCS-C02: AWS Certified Security - Specialty',
+    type: 'Specialization',
+    skills: ['AWS Security Architecture', 'IAM', 'Data Protection', 'Logging & Monitoring', 'Incident Response'],
+    description:
+      '3-course specialization covering security across AWS hosts, networks, and the edge; protecting data with advanced logging and monitoring; and managing incident response, IAM, and AWS service security, aligned with the SCS-C02 exam domains.',
+    estimatedTimeCommitment: '~1 month at 10 hrs/week (~40 hrs)',
+    credentialUrl: 'https://coursera.org/verify/specialization/T51WF6K4LAON',
+    thumbnail: '/credentials/thumbs/aws-security-specialty.jpg',
+    fullImage: '/credentials/full/aws-security-specialty.jpg',
+  },
+  {
+    id: 'udemy-generative-ai-aws',
+    issuingOrganization: 'Udemy',
+    issueDate: '2026-07-31',
+    credentialName: 'Ultimate AWS Certified Generative AI Developer Professional',
+    type: 'Course',
+    skills: ['Generative AI on AWS', 'Amazon Bedrock', 'Prompt Engineering', 'AI/ML Application Development'],
+    description:
+      'Course covering how to build generative AI applications on AWS, including working with foundation models, prompt engineering, and AWS AI/ML services, taught by AWS-certified instructors Stephane Maarek and Frank Kane (Sundog Education).',
+    estimatedTimeCommitment: '25.5 total hours',
+    credentialUrl: 'https://ude.my/UC-9a6e46a3-7880-42f2-a213-1bd3a0513765',
+    thumbnail: '/credentials/thumbs/udemy-generative-ai-developer.jpg',
+    fullImage: '/credentials/full/udemy-generative-ai-developer.jpg',
+  },
+  {
+    id: 'anthropic-claude-api',
+    issuingOrganization: 'Anthropic',
+    issueDate: '2026-09-18',
+    credentialName: 'Claude with the Anthropic API',
+    type: 'Course',
+    skills: ['Anthropic API', 'Claude Prompt Engineering', 'Tool Use', 'LLM Application Development'],
+    description:
+      'Course covering how to build applications with Claude using the Anthropic API, including prompt engineering, tool use, and other core patterns for working with Claude programmatically.',
+    estimatedTimeCommitment: 'Self-paced course (hours not listed on certificate)',
+    thumbnail: '/credentials/thumbs/anthropic-claude-api.jpg',
+    fullImage: '/credentials/full/anthropic-claude-api.jpg',
   },
 ];

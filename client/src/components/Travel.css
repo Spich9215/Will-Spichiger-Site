@@ -1,0 +1,45 @@
+/* client/src/components/Travel.css */
+
+.travel-layout {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Map comes first in the DOM/visually on the left; the ride list sits to
+   its right on desktop and wraps below it on narrow screens. */
+.travel-map-pane {
+  flex: 1 1 480px;
+  min-width: 320px;
+  height: 600px;
+}
+
+.travel-ride-list {
+  width: 280px;
+  max-height: 600px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 0.5rem;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  .travel-ride-list {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 700px) {
+  .travel-map-pane {
+    flex-basis: 100%;
+    min-width: 0;
+    height: 400px;
+  }
+
+  .travel-ride-list {
+    width: 100%;
+    max-height: 260px;
+  }
+}
