@@ -180,7 +180,11 @@ const Credentials: React.FC = () => {
                     onClick={() => setSelected(c)}
                     aria-label={`Enlarge ${c.credentialName} certificate`}
                   >
-                    <img src={c.thumbnail} alt={`${c.credentialName} certificate thumbnail`} />
+                    <img
+                      src={c.thumbnail}
+                      alt={`${c.credentialName} ${c.imageStyle === 'badge' ? 'badge' : 'certificate thumbnail'}`}
+                      className={c.imageStyle === 'badge' ? 'credentials-img-badge' : undefined}
+                    />
                   </button>
                 </td>
                 <td>
@@ -239,18 +243,39 @@ const Credentials: React.FC = () => {
             >
               &times;
             </button>
-            <img src={selected.fullImage} alt={`${selected.credentialName} certificate`} />
+            <img
+              src={selected.fullImage}
+              alt={`${selected.credentialName} ${selected.imageStyle === 'badge' ? 'badge' : 'certificate'}`}
+              className={selected.imageStyle === 'badge' ? 'credentials-img-badge' : undefined}
+            />
             <div className="credentials-modal-details">
               <h3>{selected.credentialName}</h3>
               <p>
                 <strong>{selected.issuingOrganization}</strong> &middot; {formatDate(selected.issueDate)}
               </p>
               <p>{selected.description}</p>
-              {selected.credentialUrl && (
-                <a href={selected.credentialUrl} target="_blank" rel="noopener noreferrer">
-                  Verify credential &rarr;
-                </a>
+              {selected.verificationSteps && selected.verificationSteps.length > 0 && (
+                <>
+                  <h4 className="credentials-verify-heading">How to verify</h4>
+                  <ol className="credentials-verify-steps">
+                    {selected.verificationSteps.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ol>
+                </>
               )}
+              <div className="credentials-modal-links">
+                {selected.credentialUrl && (
+                  <a href={selected.credentialUrl} target="_blank" rel="noopener noreferrer">
+                    Verify credential &rarr;
+                  </a>
+                )}
+                {selected.documentUrl && (
+                  <a href={selected.documentUrl} target="_blank" rel="noopener noreferrer">
+                    Download certified PDF &darr;
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>

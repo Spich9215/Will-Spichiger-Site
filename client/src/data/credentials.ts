@@ -15,6 +15,9 @@ export interface Credential {
   credentialUrl?: string;
   thumbnail: string; // small icon shown in the table
   fullImage: string; // larger image shown when the icon is enlarged
+  imageStyle?: 'badge'; // 'badge' = transparent-background badge art: shown whole (not cropped) and smaller in the modal
+  documentUrl?: string; // optional downloadable source document (e.g. a certified PDF)
+  verificationSteps?: string[]; // optional how-to-verify steps shown in the enlarged view
 }
 
 export const credentials: Credential[] = [
@@ -22,14 +25,21 @@ export const credentials: Credential[] = [
     id: 'ut-austin-ba',
     issuingOrganization: 'The University of Texas at Austin',
     issueDate: '2014-05-17',
-    credentialName: 'Bachelor of Arts',
+    credentialName: 'Bachelor of Arts - Economics',
     type: 'Degree',
     skills: ['Critical Thinking', 'Research & Writing', 'Liberal Arts Foundation'],
     description:
-      "Undergraduate degree conferred by the University of Texas at Austin, issued by the Board of Regents upon recommendation of the faculty.",
+      "Undergraduate degree conferred by the University of Texas at Austin, issued by the Board of Regents upon recommendation of the faculty. Issued as a Certified Electronic Diploma (CeDiploma); verify with CeDiD 26EE-V5TG-WXR3 on the UT Austin Registrar's validation page.",
     estimatedTimeCommitment: '4 years (full-time)',
+    credentialUrl: 'https://registrar.utexas.edu/services/cediploma/cediploma-validation',
     thumbnail: '/credentials/thumbs/ut-austin-diploma.jpg',
     fullImage: '/credentials/full/ut-austin-diploma.jpg',
+    documentUrl: '/credentials/docs/ut-austin-cediploma.pdf',
+    verificationSteps: [
+      'Note the CeDiD printed in the top-left corner of the diploma: 26EE-V5TG-WXR3.',
+      "Open the UT Austin Registrar's CeDiploma validation page (link below) and enter the CeDiD to confirm the diploma with the university.",
+      'Optionally, download the certified PDF and open it in Adobe Acrobat/Reader: a "Certified by Credentialing Services, Paradigm, Inc." ribbon confirms the document is unaltered since issuance. Do not trust it if any other symbol is displayed.',
+    ],
   },
   {
     id: 'python-for-everybody',
@@ -129,11 +139,12 @@ export const credentials: Credential[] = [
       'Cost-Optimized Architectures',
     ],
     description:
-      'Industry certification validating the ability to design distributed systems on AWS. Passed with a scaled score of 795/1000 (720 required). Validation Number: WKWGZX1JL2R111GC.',
+      'Industry certification validating the ability to design distributed systems on AWS. Passed. Validation Number: WKWGZX1JL2R111GC.',
     estimatedTimeCommitment: '~40-80 hrs of prep (varies by experience)',
     credentialUrl: 'https://aws.amazon.com/verification',
-    thumbnail: '/credentials/thumbs/aws-saa-badge.jpg',
-    fullImage: '/credentials/full/aws-saa-badge.jpg',
+    thumbnail: '/credentials/thumbs/aws-saa-badge.png',
+    fullImage: '/credentials/full/aws-saa-badge.png',
+    imageStyle: 'badge',
   },
   {
     id: 'stevens-ms-cs',
@@ -189,5 +200,27 @@ export const credentials: Credential[] = [
     estimatedTimeCommitment: 'Self-paced course (hours not listed on certificate)',
     thumbnail: '/credentials/thumbs/anthropic-claude-api.jpg',
     fullImage: '/credentials/full/anthropic-claude-api.jpg',
+  },
+  {
+    id: 'aws-genai-developer-pro',
+    issuingOrganization: 'Amazon Web Services',
+    issueDate: '2026-10-01',
+    expirationDate: '2029-10-01',
+    credentialName: 'AWS Certified Generative AI Developer - Professional',
+    type: 'Certification',
+    skills: [
+      'Foundation Model Integration',
+      'Amazon Bedrock',
+      'Agentic AI',
+      'AI Safety & Governance',
+      'GenAI Cost & Performance Optimization',
+    ],
+    description:
+      'Professional-level certification (AIP-C01) validating the ability to design and build generative AI solutions on AWS: integrating foundation models into applications and business workflows, implementing agentic AI, prompt engineering, cost and performance optimization, and security and responsible AI governance. Passed.',
+    estimatedTimeCommitment: 'Self-study exam prep, incl. a 25.5-hr course',
+    credentialUrl: 'https://www.credly.com/badges/fc77e8a7-f7c3-4e4e-9654-8d2931b77e18',
+    thumbnail: '/credentials/thumbs/aws-genai-developer-pro-badge.png',
+    fullImage: '/credentials/full/aws-genai-developer-pro-badge.png',
+    imageStyle: 'badge',
   },
 ];
